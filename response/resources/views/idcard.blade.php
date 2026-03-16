@@ -3,7 +3,6 @@
 <head>
     <title>Student ID Card</title>
 
-    <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -22,10 +21,24 @@
         <strong>Course:</strong> {{ $course }} <br>
         <strong>Contact:</strong> {{ $contact }} <br>
         <strong>Address:</strong> {{ $address }} <br>
-        <strong>Status:</strong> {{ $status }}
+        <strong>Status:</strong> {{ $status }}<br>
+        <strong>Pass/Fail:</strong> {{ $percentage > 75 ? "Pass" : "Fail" }}
     </p>
 
   </div>
+
+</div>
+<div>
+    <?php
+    print_r($student_lists)?>
+</div>
+<div class="container mt-4">
+    
+    <h4>Student List</h4>
+
+    @foreach ($student_lists as $student_list)
+        <h6>{{ $student_list }}</h6>
+    @endforeach
 
 </div>
 

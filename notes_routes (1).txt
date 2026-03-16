@@ -1,0 +1,165 @@
+To define route:
+
+Route::get('/', function(){
+    return view('welcome');
+});
+
+1. Route kya hota hai
+
+Route decide karta hai:
+
+Kaunsa URL open hone par
+kaunsa code run hoga
+
+Example:
+
+example.com/
+
+Is URL par kya run hoga → route decide karta hai.
+
+Laravel me routes file hoti hai:
+
+routes/web.php
+2. Route::get()
+Route::get()
+
+Yeh Laravel ka method hai jo GET request handle karta hai.
+
+GET request matlab:
+
+browser se normal page open karna
+
+Example:
+
+google.com
+youtube.com
+example.com/about
+
+Ye sab GET requests hote hain.
+
+Syntax:
+
+Route::get(URL, function)
+3. '/' ka matlab
+'/'
+
+Ye root URL hota hai.
+
+Matlab:
+
+http://localhost:8000/
+
+Ya
+
+example.com/
+
+Yani homepage.
+
+4. function()
+function(){
+}
+
+Ye anonymous function hai.
+
+Anonymous matlab:
+
+function jiska koi naam nahi hota
+
+Example:
+
+function(){
+   return "Hello";
+}
+
+Laravel is function ko run karta hai jab user URL visit karta hai.
+
+5. return view()
+return view('welcome');
+
+Ye Laravel ka helper function hai.
+
+Iska kaam:
+
+Blade template load karna
+
+Ye file load karega:
+
+resources/views/welcome.blade.php
+
+Example file:
+
+resources/views/welcome.blade.php
+<h1>Welcome to Laravel</h1>
+What is this?
+
+Browser me ye show hoga.
+
+Complete Flow
+
+User browser me open karta hai:
+
+http://localhost:8000/
+
+Flow:
+
+Request
+↓
+routes/web.php
+↓
+Route::get('/')
+↓
+function run hota hai
+↓
+view('welcome')
+↓
+welcome.blade.php load
+↓
+HTML browser ko bhej diya
+Important Mistake
+
+Tumne likha:
+
+Router::get()
+
+Correct hai:
+
+Route::get()
+
+Laravel me Route class hoti hai, Router nahi.
+
+Aur ek example
+Route::get('/about', function(){
+    return "This is about page";
+});
+
+Agar user open kare:
+
+localhost:8000/about
+
+Output:
+
+This is about page
+Controller ke saath route
+
+Real projects me usually controller use hota hai.
+
+Example:
+
+Route::get('/users', [UserController::class, 'index']);
+
+Matlab:
+
+/users
+↓
+UserController
+↓
+index function run
+
+
+Agar tum Laravel me routing easily navigate karna chahte ho (route → controller → view jump), to VS Code me Laravel Goto extension use hota hai.
+
+Main extension:
+
+Laravel Goto
+
+Ye automatically route, controller, view, config etc. pe jump kara deta hai.

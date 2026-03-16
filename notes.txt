@@ -1,3 +1,12 @@
 
 To create a new controller:  "php artisan make:controller controller_name"
 To create a new Model: "php artisan make:model model_name:
+
+
+//Passing data (variable, integer, array) to views:
+//1. associative array
+//2. with chaining
+//3. compact
+//4. with variable
+
+//Attaching headers to the route and on landing page

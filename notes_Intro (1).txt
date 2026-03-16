@@ -1,0 +1,116 @@
+What is MVC? Model View Controller. It is a software design pattern which divides an application into 3 parts (Model, View, Controller) to make code clean and maintainable.
+System Flow:
+User Request
+   ↓
+Controller
+   ↓
+Model
+   ↓
+Controller
+   ↓
+View
+   ↓
+Response to User
+
+
+What is a model? It deals with the database.
+Laravel model:
+class User extends Model
+{
+}
+Ab agar users table ka data chahiye:
+
+User::all();
+
+Ye database se data la raha hai.
+
+
+
+
+What is View? View frontend / UI hota hai jo user ko dikh raha hota hai.
+Example:
+
+resources/views/home.blade.php
+
+Example code:
+
+<h1>Welcome {{ $name }}</h1>
+
+
+
+What is a controller? Controller is the brain. It decides:
+kaunsa data chahiye
+kaunsa model call hoga
+kaunsa view return hoga
+
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        $users = User::all();
+        return view('users', compact('users'));
+    }
+}
+
+Route
+↓
+UserController
+↓
+User Model
+↓
+Database
+↓
+UserController
+↓
+users.blade.php
+↓
+Browser
+
+
+
+To create a project: laravel new project_name
+To create custom controllers: php artisan make:controller controller_name 
+To create own model: php artisan make:model model_name 
+For database: User.php
+
+
+
+What is Artisan?
+It is Laravel Command Line Tool which makes development easier.
+
+1 Controllers create
+php artisan make:controller UserController
+Automatically controller file ban jayegi.
+
+2 Models create
+php artisan make:model User
+
+3 Migration create
+php artisan make:migration create_users_table
+
+4 Server run
+php artisan serve
+
+Output:
+http://127.0.0.1:8000
+Laravel server start ho jata hai.
+
+5 Database migrate
+php artisan migrate
+Database tables create ho jate hain.
+
+
+
+1.Routing
+Routes->web.php
+2. UI part
+resources -> views-> filename.blade.php
+
+3. Database
+App->Models->ModelName.php
+.env file
+
+4. Controller
+App->http->Controllers.php
+
