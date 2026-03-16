@@ -27,3 +27,12 @@ Route::get('/admin',function(){
 Route::get('/student',function(){
     return response("<h1 style='color:green'>Welcome to Student Page </h1>");
 });
+// create a Route with /student/{id} returning ID-Card of student with reg no=id    
+Route::get('/student/{id}', function ($id) {
+    $name="Ritik";
+    $course="B.Tech";
+    $contact="234567890";
+    $address="Ranchi";
+    $status="Active";
+    return view('idcard',['id'=>$id, 'name'=>$name,'course'=>$course, 'contact'=>$contact, 'address'=>$address, 'status'=>$status]);
+});
