@@ -10,3 +10,10 @@ To create a new Model: "php artisan make:model model_name:
 //4. with variable
 
 //Attaching headers to the route and on landing page
+
+//controller
+//Basic controller
+//Returning string from controller
+//Returing view from controller
+//Passing data to views from controller
+//Returning json from controller

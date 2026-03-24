@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyController; //file is imported so that we can use its functions eg index()
+use App\Http\Controllers\SecondController; 
+use App\Http\Controllers\ProductController; 
+use App\Http\Controllers\FormController; 
 
 Route::get('/', function () {
     return response()->view('welcome')->header('Developer-Name','Ritik')->header('Developed-in-year','2026')
@@ -94,3 +98,39 @@ Route::get('/myheader', function(){
     ->header('Developer-Name','Ritik')->header('Developed-in-year','2026')
     ->header('Site-Description','This website is developed for interaction with LPU Students');
 });
+Route::get('/home-page', function(){
+    return response()->view('home');
+});
+
+Route::get('/user/{id}/{name}', function($id,$name){
+    return view('pages.test', ['id'=>$id, 'name'=>$name]);
+});
+// Route::get('/user/{id}/{name?}', function($id,$name='Ritik'){
+//     return view('pages.test', ['id'=>$id, 'name'=>$name]);
+// }); Default name
+
+
+//create a route /btech/result-2025 that will show the student result Dashboard in tabular form with columns name , registration no, cgpa , status (pass/fail) also highlight the row with green if passed else red
+Route::get('/btech/result-2026', function () {
+
+    $students = [
+        ['name' => 'Ritik', 'reg' => '101', 'cgpa' => 8.5],
+        ['name' => 'Aman', 'reg' => '102', 'cgpa' => 5.2],
+        ['name' => 'Neha', 'reg' => '103', 'cgpa' => 9.1],
+        ['name' => 'Simran', 'reg' => '104', 'cgpa' => 4.8],
+    ];
+
+    return view('pages.result', compact('students'));
+});
+
+Route::get('/controller', [MyController::class, 'index']);
+
+Route::get('/secondcontroller', [SecondController::class, 'hello']);
+Route::get('/secondcontroller/func2', [SecondController::class, 'function2']);
+Route::get('/secondcontroller/func3', [SecondController::class, 'function3']);
+Route::get('/secondcontroller/json', [SecondController::class, 'Json']);
+
+Route::get('/productcontroller', [ProductController::class, 'JsonResponse']);
+
+Route::get('/formcontroller', [FormController::class, 'form']);
+
