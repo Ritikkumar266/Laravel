@@ -132,5 +132,9 @@ Route::get('/secondcontroller/json', [SecondController::class, 'Json']);
 
 Route::get('/productcontroller', [ProductController::class, 'JsonResponse']);
 
-Route::get('/formcontroller', [FormController::class, 'form']);
+Route::view('/regform','studentform');
+Route::post('/submitform', [FormController::class, 'submit']);
+
+Route::view('/regformget','formget');
+Route::get('/submitformget', [FormController::class, 'submitget']);
 
