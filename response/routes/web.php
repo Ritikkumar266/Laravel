@@ -5,6 +5,7 @@ use App\Http\Controllers\MyController; //file is imported so that we can use its
 use App\Http\Controllers\SecondController; 
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\FormController; 
+use App\Http\Controllers\FormPost; 
 
 Route::get('/', function () {
     return response()->view('welcome')->header('Developer-Name','Ritik')->header('Developed-in-year','2026')
@@ -138,3 +139,9 @@ Route::post('/submitform', [FormController::class, 'submit']);
 Route::view('/regformget','formget');
 Route::get('/submitformget', [FormController::class, 'submitget']);
 
+Route::view('/submitformpost','formPost');
+Route::post('/submitpost',[FormPost::class,'submitPost']);
+
+Route::get('/lpu/examination/faculty', function () {
+    return view('home');
+})->name('exam');

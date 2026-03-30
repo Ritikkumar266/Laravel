@@ -17,3 +17,16 @@ To create a new Model: "php artisan make:model model_name:
 //Returing view from controller
 //Passing data to views from controller
 //Returning json from controller
+
+//Form handling regex
+// /^ --start of string
+// $/ --end of string
+//[alowed characters]
+// [A-Z]
+// [a-z]
+// [0-9]
+// [!@#$%&^*]
+// \s --space
+// \t --tab
+// \d --[0-9]
+// + --allowing multiple characters like aman ,nitin
