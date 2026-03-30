@@ -143,5 +143,5 @@ Route::view('/submitformpost','formPost');
 Route::post('/submitpost',[FormPost::class,'submitPost']);
 
 Route::get('/lpu/examination/faculty', function () {
-    return view('home');
-})->name('exam');
+    return view('nameroute');
+})->name('exam'); //name route
