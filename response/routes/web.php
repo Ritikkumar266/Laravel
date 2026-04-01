@@ -145,3 +145,16 @@ Route::post('/submitpost',[FormPost::class,'submitPost']);
 Route::get('/lpu/examination/faculty', function () {
     return view('nameroute');
 })->name('exam'); //name route
+
+
+
+
+//route grouping
+Route::view('/registerformpost','register');
+Route::post('/registerpost',[FormController::class,'register1']);
+
+Route::prefix('lpu')->group(function(){
+    Route::get('/stu', function(){
+    return "Welcome to Faculty Portal`"
+});
+});

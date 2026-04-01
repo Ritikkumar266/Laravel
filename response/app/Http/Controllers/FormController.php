@@ -33,5 +33,20 @@ class FormController extends Controller
         ]);
         return $request->all();
     }
+
+   public function register1(Request $request){
+        $request->validate(
+            [
+               'name'=>'required | min:3| max:20 | regex:/^[A-Za-z0-9\s]+$/' ,
+               'email'=>'email|required|unique:users,email',
+               'age'=>'required| numeric | between:18,60',
+                "password" => "min:8|required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*?])[A-Za-z0-9@!#$%^&*?]+$/"
+
+
+            ]
+            );
+        return $request->all();
+        // return "<script> alert('Form submitted successfully') </script>";
+    }
 }
 
