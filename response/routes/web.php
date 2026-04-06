@@ -1,16 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+ 
 use App\Http\Controllers\MyController; //file is imported so that we can use its functions eg index()
 use App\Http\Controllers\SecondController; 
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\FormController; 
-use App\Http\Controllers\FormPost; 
+use App\Http\Controllers\FormPost;
 
-Route::get('/', function () {
-    return response()->view('welcome')->header('Developer-Name','Ritik')->header('Developed-in-year','2026')
-    ->header('Site-Description','This website is developed for interaction with LPU Students');;
-});
 Route::get('/hello', function () {
     return response('Hello world');
 });
@@ -153,8 +150,25 @@ Route::get('/lpu/examination/faculty', function () {
 Route::view('/registerformpost','register');
 Route::post('/registerpost',[FormController::class,'register1']);
 
-Route::prefix('lpu')->group(function(){
-    Route::get('/stu', function(){
-    return "Welcome to Faculty Portal`"
+// Route::prefix('lpu')->group(function(){
+//     Route::get('/stu', function(){
+//     return "Welcome to Faculty Portal`"
+// });
+// });
+
+
+Route::get('/', function () {
+    return response("Hello");
 });
+
+Route::get('/role/{x}', function($x) {
+    if ($x == 'admin') {
+        return view('admin');
+    } 
+    elseif ($x == 'user') {
+        return view('user');
+    } 
+    else {
+        return response("Access denied");
+    }
 });

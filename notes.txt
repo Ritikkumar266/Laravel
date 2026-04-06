@@ -30,3 +30,5 @@ To create a new Model: "php artisan make:model model_name:
 // \t --tab
 // \d --[0-9]
 // + --allowing multiple characters like aman ,nitin
+
+
