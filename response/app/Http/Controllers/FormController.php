@@ -45,6 +45,7 @@ class FormController extends Controller
 
             ]
             );
+            // $request->session()->put('name',$request->input('name'))
         return $request->all();
         // return "<script> alert('Form submitted successfully') </script>";
     }

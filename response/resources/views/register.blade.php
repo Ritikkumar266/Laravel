@@ -1,3 +1,4 @@
+@extends('layout.masterfile')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +11,13 @@
         --color-clifford: #da373d;
       }
     </style>
+    @section('title')
+    Registration
+    @endsection
 </head>
 <body class="min-h-screen  bg-gradient-to-br from-pink-300 via-indigo-200 to-sky-400 flex items-center justify-center p-4">
+ 
+  @section('content')
     <div class="w-full max-w-xl bg-white/90 backdrop-blur-lg border border-blue-800 rounded-4xl shadow-2xl p-8">
       <h1 class="text-4xl font-extrabold text-slate-800 mb-2 text-center">Student Registration</h1>
       <p class="text-sm text-slate-500 mb-6 text-center">Fill out the form below to enroll.</p>
@@ -66,5 +72,7 @@
         <button type="submit" class="w-full rounded-xl bg-indigo-600 text-white px-6 py-3 font-semibold shadow hover:bg-indigo-700 transition">Submit Registration</button>
       </form>
     </div>
+    @endsection
+    
 </body>
 </html>

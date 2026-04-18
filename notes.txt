@@ -32,3 +32,4 @@ To create a new Model: "php artisan make:model model_name:
 // + --allowing multiple characters like aman ,nitin
 
 
+Master file is linked with routing file web.php placed in route folder to make it SPA in MVC architecture

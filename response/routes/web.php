@@ -172,3 +172,8 @@ Route::get('/role/{x}', function($x) {
         return response("Access denied");
     }
 });
+Route::view('/dashboard','layout.dashboard');
+
+Route::get('/open-insectpest', function () {
+    return response()->redirectTo('https://insect-pest-management.vercel.app/');
+})->name('insect');
