@@ -9,7 +9,7 @@
 </head>
 <body>
     <header style="background-color:lightblue; padding:10px; text-align:center">
-        <h1>Lovely Professional University</h1>
+        <h1>{{__('masterfile.heading')}}</h1>
         <nav style="text-align:center">
             <a href="/" style="margin: 0 15px; text-decoration:none; color:black;">Welcome</a>
             <a href="/about-us" style="margin: 0 15px; text-decoration:none; color:black;">About Us</a>

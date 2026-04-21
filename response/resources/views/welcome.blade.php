@@ -7,12 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-   <marquee> <h1 style='color:blue; text-decoration:underline;'>Lovely Professional University</h1></marquee>
+   <marquee> <h1 style='color:blue; text-decoration:underline;'> {{__('welcome.heading')}}</h1></marquee>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     
     <div>
         <img src="{{ asset('/images/car3.jpg') }}" alt="Car" style="width:300px; height:300px;">
-        <div class="alert alert-primary" role="alert">A simple primary alert-check it out!</div>
+        <div class="alert alert-primary" role="alert">{{__('welcome.paragraph')}}</div>
     </div>
 
     

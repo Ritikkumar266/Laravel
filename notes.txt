@@ -33,3 +33,11 @@ To create a new Model: "php artisan make:model model_name:
 
 
 Master file is linked with routing file web.php placed in route folder to make it SPA in MVC architecture
+
+
+
+
+Localization ->Multi language
+ php artisan lang:publish
+
+ role of env file -> For localization , SMTP port

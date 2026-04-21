@@ -7,6 +7,8 @@ use App\Http\Controllers\SecondController;
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\FormController; 
 use App\Http\Controllers\FormPost;
+use App\Http\Controllers\MailController;
+
 
 Route::get('/hello', function () {
     return response('Hello world');
@@ -177,3 +179,9 @@ Route::view('/dashboard','layout.dashboard');
 Route::get('/open-insectpest', function () {
     return response()->redirectTo('https://insect-pest-management.vercel.app/');
 })->name('insect');
+
+Route::get('/welcome',function(){
+    return view('welcome');
+});
+
+Route::get('/sendemail',[MailController::class,'sendemail']);
