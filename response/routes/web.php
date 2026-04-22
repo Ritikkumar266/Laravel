@@ -8,7 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FormController; 
 use App\Http\Controllers\FormPost;
 use App\Http\Controllers\MailController;
-
+use App\Http\Controllers\StudentController;
 
 Route::get('/hello', function () {
     return response('Hello world');
@@ -185,3 +185,5 @@ Route::get('/welcome',function(){
 });
 
 Route::get('/sendemail',[MailController::class,'sendemail']);
+
+Route::get('/studentdata',[StudentController::class,'getdata']);

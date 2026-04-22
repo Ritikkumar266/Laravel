@@ -40,4 +40,9 @@ Master file is linked with routing file web.php placed in route folder to make i
 Localization ->Multi language
  php artisan lang:publish
 
- role of env file -> For localization , SMTP port
+ role of env file -> For localization , SMTP port , environment configuration for database
+
+
+ MYSQL (defualt)- username- root , pwd- null
+
+ 
