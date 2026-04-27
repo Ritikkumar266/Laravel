@@ -42,7 +42,19 @@ Localization ->Multi language
 
  role of env file -> For localization , SMTP port , environment configuration for database
 
-
+Eloquent ORM (Object relational Method) - mapping
  MYSQL (defualt)- username- root , pwd- null
 
+
+ Model---------Controller ----------Views
+{model will perform operations in controller and controller will do the operations in views(like passing data)}
+
+To make view interactive like DB data we can use Tailwind
+
+php artisan migrate 
+php artisan session:table
+php artisan cache:table 
+
+
+-> creates a migration file for a table named cache
  

@@ -15,10 +15,12 @@
     <table class="table table-bordered text-center">
         <thead class="table-dark">
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th>
                 <th>Registration No</th>
                 <th>Name</th>
                 <th>Course</th>
+                <th>Marks</th> -->
+                <th>Name</th>
                 <th>Marks</th>
             </tr>
         </thead>
@@ -29,11 +31,14 @@
             
 
     <tr>
-        <td>{{ $student->ID }}</td>
+        <!-- <td>{{ $student->ID }}</td>
         <td>{{ $student['Reg_No.'] }}</td>
         <td>{{ $student->Name }}</td>
         <td>{{ $student->Course }}</td>
+        <td>{{ $student->Marks }}</td> -->
+        <td>{{ $student->Name }}</td>
         <td>{{ $student->Marks }}</td>
+
     </tr>
         @endforeach
 
