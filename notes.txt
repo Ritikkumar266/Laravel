@@ -58,3 +58,18 @@ php artisan cache:table
 
 -> creates a migration file for a table named cache
  
+
+
+ to check the mongodb version ->  mongod --version
+
+
+ php -i | findstr "PHP Version" ->command (8.2.12)
+
+ php -i | findstr "Thread"  ->command(enabled, Windows Threads)
+
+ php -i | findstr "Architecture" -> command (x64)
+
+ composer require mongodb/laravel-mongodb
+
+
+ php artisan make:controller GrocceryShop -m Item

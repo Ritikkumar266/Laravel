@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -63,7 +63,17 @@ return [
                 (PHP_VERSION_ID >= 80500 ? Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
+        'mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => env('DBHOST', '127.0.0.1'),
+            'port'     => env('DBPORT', 27017),
+            'database' => env('DBDATABASE', 'laravelmongo'),
+            'username' => env('DBUSERNAME', ''),
+            'password' => env('DBPASSWORD', ''),
+            'options'  => [
+                'database' => env('DBAUTH_DATABASE', 'admin'),
+            ],
+        ],
         'mariadb' => [
             'driver' => 'mariadb',
             'url' => env('DB_URL'),
