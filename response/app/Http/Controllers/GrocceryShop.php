@@ -14,6 +14,7 @@ class GrocceryShop extends Controller
     {
         //
         $items = Item::all();
+        //model will interact with controller for DB related operations and controller will interact with view to display data
         return $items;
     }
 

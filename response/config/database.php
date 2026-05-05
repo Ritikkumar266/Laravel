@@ -67,7 +67,7 @@ return [
             'driver'   => 'mongodb',
             'host'     => env('DBHOST', '127.0.0.1'),
             'port'     => env('DBPORT', 27017),
-            'database' => env('DBDATABASE', 'laravelmongo'),
+            'database' => env('DBDATABASE', 'groccery_shop'),                  //Added For MongoDB
             'username' => env('DBUSERNAME', ''),
             'password' => env('DBPASSWORD', ''),
             'options'  => [
