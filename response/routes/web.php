@@ -10,7 +10,9 @@ use App\Http\Controllers\FormPost;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\GrocceryShop;
-
+use App\Http\Controllers\APIController;
+use App\Http\Middleware\AgeCheck;
+use App\Http\Controllers\FileController;
 Route::get('/hello', function () {
     return response('Hello world');
 });
@@ -191,3 +193,44 @@ Route::get('/studentdata',[StudentController::class,'getdata']);
 
 
 Route::get('/groccery', [GrocceryShop::class, 'index']);
+
+
+
+
+
+//MIDDLEWARE------
+// php artisan make:middleware AgeCheck   (To create a global middleware)
+
+//For Global Middleware
+// Route::get("/{age}",function(){
+//     return ($age);
+// });
+
+//Route Middelware
+// Route::get("/home/{age}",function(){
+//     return "Home Page";
+// })->middleware('agecheck');
+
+
+//Group Middleware
+Route::middleware('agecheck')->group(function(){
+    Route::get("/home/{age}",function(){
+    return "HOME PAGE";
+});
+//We can have multiple routes like the one above
+});
+
+
+//API (Application Programming Interface)
+//API data is in JSON format
+//APIs are tested by  thunderclient 
+//APIs are made in Routes->api.php
+
+
+Route::get('/get-products',[APIController::class,'fetchApiData']);
+
+
+Route::get('/fileupload', function(){
+    return view('fileupload');
+});
+Route::post('/uploadfile',[FileController::class,'upload']);

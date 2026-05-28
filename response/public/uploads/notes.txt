@@ -92,7 +92,4 @@ php artisan cache:table
 //create own api , fetch data from api and test api
 // we can get the fake API from DUMMYJSON site
 
-
-php artisan storage:link
-
  
